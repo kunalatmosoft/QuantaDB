@@ -1,6 +1,6 @@
 {
   "name": "quantadb",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Atmosoft quantadb a simple and very easliy to use database that relly change the new era",
   "main": "index.js",
   "scripts": {
