@@ -1,6 +1,6 @@
 {
   "name": "quantadb",
-  "version": "1.0.1",
+  "version": "1.1.1",
   "description": "Atmosoft quantadb a simple and very easliy to use database that relly change the new era",
   "main": "index.js",
   "scripts": {
@@ -9,6 +9,15 @@
   "keywords": [
     "SpaceDB"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kunalatmosoft/quantadb.git"
+
+  },
+  "homepage": "https://github.com/kunalatmosoft/quantadb#README",
+  "bugs": {
+    "url": "https://github.com/yourusername/quantadb/issues"
+  },
   "author": "Kunal Singh",
   "license": "MIT",
   "dependencies": {

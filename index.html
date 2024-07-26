@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Quantadb Documentation</title>
+<style>
+    body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+}
+
+.container {
+  width: 80%;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+header {
+  text-align: center;
+  padding: 20px 0;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2.5em;
+  color: #333;
+}
+
+header p {
+  color: #666;
+  font-size: 1.2em;
+}
+
+section {
+  margin-bottom: 40px;
+}
+
+section h2 {
+  color: #333;
+  border-bottom: 2px solid #e2e2e2;
+  padding-bottom: 10px;
+}
+
+section h3 {
+  color: #555;
+  margin-top: 20px;
+}
+
+pre {
+  background-color: #f4f4f4;
+  padding: 15px;
+  border-left: 5px solid #007BFF;
+  overflow: auto;
+}
+
+pre code {
+  color: #333;
+  font-size: 1em;
+}
+
+a {
+  color: #007BFF;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+</style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <h1>Quantadb Documentation</h1>
+      <p>Simple file-based database for Node.js with CRUD operations.</p>
+    </header>
+
+    <section id="installation">
+      <h2>Installation</h2>
+      <p>To install <strong>Quantadb</strong>, use the following command:</p>
+      <pre><code>npm install quantadb</code></pre>
+      <p>If you are developing the library and want to test it locally, use <code>npm link</code>:</p>
+      <pre><code>cd /path/to/quantadb
+npm link
+cd /path/to/your/test/project
+npm link quantadb</code></pre>
+    </section>
+
+    <section id="usage">
+      <h2>Usage</h2>
+      <h3>Basic Setup</h3>
+      <p>Create a new instance of <strong>Quantadb</strong> by specifying the directory where the database files will be stored.</p>
+      <pre><code>const Quantadb = require('quantadb');
+const db = new Quantadb('./db');</code></pre>
+
+      <h3>Create a Document</h3>
+      <p>Create a new document in a specified collection.</p>
+      <pre><code>async function createUser() {
+  const user = await db.create('users', { name: 'Alice', age: 25 });
+  console.log('Created User:', user);
+}</code></pre>
+
+      <h3>Read Documents</h3>
+      <p>Read documents from a collection with optional query parameters.</p>
+      <pre><code>async function readUsers() {
+  const users = await db.read('users');
+  console.log('Users:', users);
+}</code></pre>
+
+      <h3>Update a Document</h3>
+      <p>Update an existing document by its ID.</p>
+      <pre><code>async function updateUser(id, updates) {
+  const updatedUser = await db.update('users', id, updates);
+  console.log('Updated User:', updatedUser);
+}</code></pre>
+
+      <h3>Delete a Document</h3>
+      <p>Delete a document by its ID.</p>
+      <pre><code>async function deleteUser(id) {
+  await db.delete('users', id);
+  console.log('Deleted User with ID:', id);
+}</code></pre>
+    </section>
+
+    <section id="example">
+      <h2>Example</h2>
+      <p>Here's a complete example that demonstrates creating, reading, updating, and deleting documents:</p>
+      <pre><code>const Quantadb = require('quantadb');
+
+(async () => {
+  const db = new Quantadb('./db');
+
+  // Create users
+  const user1 = await db.create('users', { name: 'Alice', age: 25 });
+  const user2 = await db.create('users', { name: 'Bob', age: 30 });
+
+  // Read users
+  console.log(await db.read('users'));
+
+  // Update a user
+  console.log(await db.update('users', user1.id, { age: 26 }));
+
+  // Delete a user
+  await db.delete('users', user2.id);
+
+  // Read users again
+  console.log(await db.read('users'));
+})();</code></pre>
+    </section>
+
+    <section id="project-structure">
+      <h2>Project Structure</h2>
+      <p>The <strong>quantadb</strong> project is structured as follows:</p>
+      <pre><code>quantadb/
+├── src/
+│   ├── FileDatabase.js     # Core file-based database implementation
+├── test/
+│   ├── server.js           # Express server for testing
+│   ├── public/
+│   │   ├── index.html      # HTML file for the front-end
+│   │   ├── style.css       # CSS file for styling
+│   │   ├── script.js       # JavaScript file for front-end logic
+├── package.json            # NPM package configuration
+├── README.md               # Project documentation</code></pre>
+    </section>
+
+    <section id="contributing">
+      <h2>Contributing</h2>
+      <p>If you'd like to contribute to <strong>Quantadb</strong>, please fork the repository and submit a pull request. Ensure that your code adheres to the coding style and includes appropriate tests.</p>
+    </section>
+
+    <section id="license">
+      <h2>License</h2>
+      <p><strong>Quantadb</strong> is licensed under the <a href="/src/LICENCE">MIT License</a>.</p>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <p>For any questions or support, please contact <a href="mailto:your-email@example.com">kunalatmosoft@gmail.com</a>.</p>
+    </section>
+  </div>
+</body>
+</html>
