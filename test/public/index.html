@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Spaced Library Test</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>Spaced Library Test</h1>
+  <div>
+    <h2>Create User</h2>
+    <form id="create-user-form">
+      <label for="name">Name:</label>
+      <input type="text" id="name" name="name" required>
+      <label for="age">Age:</label>
+      <input type="number" id="age" name="age" required>
+      <button type="submit">Create</button>
+    </form>
+  </div>
+  <div>
+    <h2>Update User</h2>
+    <form id="update-user-form">
+      <label for="update-id">User ID:</label>
+      <input type="text" id="update-id" name="id" required>
+      <label for="update-name">Name:</label>
+      <input type="text" id="update-name" name="name">
+      <label for="update-age">Age:</label>
+      <input type="number" id="update-age" name="age">
+      <button type="submit">Update</button>
+    </form>
+  </div>
+  <div>
+    <h2>Delete User</h2>
+    <form id="delete-user-form">
+      <label for="delete-id">User ID:</label>
+      <input type="text" id="delete-id" name="id" required>
+      <button type="submit">Delete</button>
+    </form>
+  </div>
+  <div>
+    <h2>Read Users</h2>
+    <button id="read-users">Read All Users</button>
+    <div id="users-list"></div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
